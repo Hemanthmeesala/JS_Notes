@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="color: #fff; background-color: #413f3f">
+    <ul class="lang">
+      <li>javascript</li>
+    </ul>
+  </body>
+  <script>
+    function addLanguage(lang) {
+      const li = document.createElement("li");
+      li.innerHTML = `${lang}`;  // tree traversing
+      document.querySelector(".lang").appendChild(li);
+    }
+    addLanguage("python");
+
+    function addOptimiseLang(lang) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(lang));
+      document.querySelector(".lang").appendChild(li);
+    }
+
+    addOptimiseLang("c++");
+
+    // Edit
+    const secLang = document.querySelector("li:nth-child(2)");
+    const newli = document.createElement('li');
+    newli.textContent = "React Native"
+    secLang.replaceWith(newli);
+
+    const firstlang = document.querySelector("li:first-child");
+    firstlang.outerHTML = '<li>TypeScript</li>';
+  
+
+  </script>
+</html>
